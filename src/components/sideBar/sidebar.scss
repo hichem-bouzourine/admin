@@ -1,0 +1,92 @@
+.sidebarContainer {
+  width: 300px;
+  height: 100vh;
+  background-color: aliceblue;
+  border: 0.5px solid rgb(230, 230, 230);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.top {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > .logo {
+    color: #6439ff;
+    font-size: 30px;
+  }
+}
+
+hr {
+  height: 0;
+  border: 0.5px solid lightgrey;
+}
+
+.center {
+  width: 100%;
+  ul {
+    list-style: none;
+    padding: 5px;
+    margin-left: 10px;
+    color: grey;
+    > .sectionTitle {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 10px;
+  > .icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    color: blueviolet;
+  }
+  > .iconTitle {
+    font-size: 20px;
+    width: 100%;
+    padding: 10px;
+  }
+  &:hover {
+    background-color: #ece8ff;
+  }
+  & .icon,
+  .iconTitle {
+    padding-left: 10px;
+  }
+}
+
+.bottom {
+  width: 100%;
+  margin-left: 20px;
+  color: gray;
+  > .themes {
+    display: flex;
+    margin-left: 10px;
+    span {
+      width: 30px;
+      height: 30px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #white {
+      background-color: white;
+      border: 0.5px solid black;
+    }
+    #black {
+      background-color: black;
+      border: 0.5px solid white;
+    }
+  }
+}
