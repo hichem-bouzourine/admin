@@ -1,0 +1,73 @@
+.featured {
+  flex: 2;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #555;
+  height: max-content;
+  padding: 0 10px;
+  border-radius: 10px;
+
+  > .top {
+    display: flex;
+    justify-content: space-between;
+    .title {
+      font-weight: 600;
+    }
+  }
+
+  > .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+
+    > .featuredChart {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+    }
+    > .title {
+      font-weight: 600;
+    }
+
+    > .value {
+      font-size: 24px;
+      font-weight: bold;
+      color: black;
+    }
+
+    > .desc {
+      font-size: 12px;
+      text-align: center;
+    }
+
+    > .summary {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+
+      .summaryItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        > .value {
+          display: flex;
+          font-weight: bold;
+
+          &.positive {
+            color: green;
+          }
+          &.negative {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
