@@ -1,3 +1,4 @@
+import "./sidebar.scss";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import GroupIcon from "@mui/icons-material/Group";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
@@ -10,13 +11,15 @@ import ErrorIcon from "@mui/icons-material/Error";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import LogoutIcon from "@mui/icons-material/Logout";
-import "./sidebar.scss";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
     <div className="sidebarContainer">
       <div className="top">
-        <h1 className="logo">Admin Dashboard</h1>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <h1 className="logo">Admin Dashboard</h1>
+        </Link>
       </div>
       <hr />
       <div className="center">
@@ -24,19 +27,25 @@ const Sidebar = () => {
           <li className="sectionTitle">MAIN</li>
           <li>
             <DashboardIcon className="icon" />
-            <span className="iconTitle">Dashboard</span>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <span className="iconTitle">Dashboard</span>
+            </Link>
           </li>
         </ul>
         <ul>
           <li className="sectionTitle">LISTS</li>
-          <li>
-            <GroupIcon className="icon" />
-            <span className="iconTitle">Users</span>
-          </li>
-          <li>
-            <StoreMallDirectoryIcon className="icon" />
-            <span className="iconTitle">Products</span>
-          </li>
+          <Link to="/users" style={{ textDecoration: "none" }}>
+            <li>
+              <GroupIcon className="icon" />
+              <span className="iconTitle">Users</span>
+            </li>
+          </Link>
+          <Link to="/products" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreMallDirectoryIcon className="icon" />
+              <span className="iconTitle">Products</span>
+            </li>
+          </Link>
           <li>
             <WysiwygIcon className="icon" />
             <span className="iconTitle">Orders</span>
