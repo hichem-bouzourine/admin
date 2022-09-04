@@ -37,6 +37,11 @@
         margin-right: 15px;
         font-weight: 500;
         font-size: 110%;
+
+        &.clickable {
+          cursor: pointer;
+        }
+
         .icon {
           margin-right: 3px;
         }

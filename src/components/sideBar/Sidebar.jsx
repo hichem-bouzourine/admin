@@ -12,8 +12,19 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setDark, setLight } from "../../redux/darkSlice";
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
+
+  const handleLightTheme = () => {
+    dispatch(setLight());
+  };
+  const handleDarkTheme = () => {
+    dispatch(setDark());
+  };
+
   return (
     <div className="sidebarContainer">
       <div className="top">
@@ -25,22 +36,22 @@ const Sidebar = () => {
       <div className="center">
         <ul>
           <li className="sectionTitle">MAIN</li>
-          <li>
-            <DashboardIcon className="icon" />
-            <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/" className="link">
+            <li>
+              <DashboardIcon className="icon" />
               <span className="iconTitle">Dashboard</span>
-            </Link>
-          </li>
+            </li>
+          </Link>
         </ul>
         <ul>
           <li className="sectionTitle">LISTS</li>
-          <Link to="/users" style={{ textDecoration: "none" }}>
+          <Link to="/users" className="link">
             <li>
               <GroupIcon className="icon" />
               <span className="iconTitle">Users</span>
             </li>
           </Link>
-          <Link to="/products" style={{ textDecoration: "none" }}>
+          <Link to="/products" className="link">
             <li>
               <StoreMallDirectoryIcon className="icon" />
               <span className="iconTitle">Products</span>
@@ -101,8 +112,8 @@ const Sidebar = () => {
       <div className="bottom">
         <span className="sectionTitle">THEME</span>
         <div className="themes">
-          <span id="white"></span>
-          <span id="black"></span>
+          <span id="white" onClick={handleLightTheme}></span>
+          <span id="black" onClick={handleDarkTheme}></span>
         </div>
       </div>
     </div>

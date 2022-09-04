@@ -78,7 +78,7 @@ const List = () => {
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id} className="tableRow">
-              <TableCell component="th" scope="row">
+              <TableCell className="tableCell" component="th" scope="row">
                 {row.id}
               </TableCell>
               <TableCell className="tableCell">

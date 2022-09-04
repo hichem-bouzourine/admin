@@ -5,10 +5,15 @@ import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import { productInputs, userInputs } from "./formSource";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import "./style/dark.scss";
 
 function App() {
+  const darkStatus = useSelector((state) => state.dark.dark);
+
   return (
-    <>
+    <div className={darkStatus == true ? "app dark" : "app"}>
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
@@ -32,7 +37,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
-    </>
+    </div>
   );
 }
 
